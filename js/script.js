@@ -55,7 +55,7 @@ function showApp() {
   $('#welcome').hide()
 };
 function loadBandsApp() {
-  console.log('loadBandsApp');
+  // console.log('loadBandsApp');
 
   loadBands()
   // updateTodo()
@@ -89,7 +89,7 @@ function deleteBand() {
 
 function loadBands() {
   $.ajax({
-      url: 'https://bandlistapi.herokuapp.com/'
+      url: 'https://bandlistapi.herokuapp.com/bands'
     }).done(function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
@@ -103,7 +103,7 @@ function loadBand(band) {
   var li = $('<li></li>');
   li.html(band.name + ' ');
    var a = $('<a>Delete</a>');      
-   a.attr('href','https://bandlistapi.herokuapp.com/' + band._id);     a.addClass('deleteBand');    
+   a.attr('href','https://bandlistapi.herokuapp.com/bands' + band._id);     a.addClass('deleteBand');    
    li.append(a);    
    $('#band_list').prepend(li);
 };
@@ -113,7 +113,7 @@ function loadNewBand() {
     var bandName = $('#band_name').val()
     var genre = $('#genre').val()
     $.ajax({
-      url: 'https://bandlistapi.herokuapp.com/',
+      url: 'https://bandlistapi.herokuapp.com/bands',
       method: 'POST',
       data: $('#new_band_form').serialize()
     }).done(function(newBand) {
