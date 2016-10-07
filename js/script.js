@@ -89,7 +89,7 @@ function deleteBand() {
 
 function loadBands() {
   $.ajax({
-      url: 'http://localhost:3000/bands'
+      url: 'https://localhost:3000/bands'
     }).done(function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
