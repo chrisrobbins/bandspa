@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
     auth: {
       params: { scope: 'openid email' } //Details: https://auth0.com/docs/scopes
@@ -15,6 +15,7 @@ $(document).ready(function() {
     e.preventDefault();
     logout();
   })
+  
 
   lock.on("authenticated", function(authResult) {
     lock.getProfile(authResult.idToken, function(error, profile) {
