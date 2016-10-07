@@ -89,7 +89,7 @@ function deleteBand() {
 
 function loadBands() {
   $.ajax({
-      url: 'https://localhost:3000/bands'
+      url: 'https://bandlistapi.herokuapp.com'
     }).done(function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
@@ -103,7 +103,7 @@ function loadBand(band) {
   var li = $('<li></li>');
   li.html(band.name + ' ');
    var a = $('<a>Delete</a>');      
-   a.attr('href','http://localhost:3000/bands/' + band._id);     a.addClass('deleteBand');    
+   a.attr('href','http://bandlistapi.herokuapp.com' + band._id);     a.addClass('deleteBand');    
    li.append(a);    
    $('#band_list').prepend(li);
 };
@@ -113,7 +113,7 @@ function loadNewBand() {
     var bandName = $('#band_name').val()
     var genre = $('#genre').val()
     $.ajax({
-      url: 'http://localhost:3000/bands',
+      url: 'http://bandlistapi.herokuapp.com',
       method: 'POST',
       data: $('#new_band_form').serialize()
     }).done(function(newBand) {
