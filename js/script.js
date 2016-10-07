@@ -89,7 +89,7 @@ function deleteBand() {
 
 function loadBands() {
   $.ajax({
-      url: 'https://git.heroku.com/bandlistapi.git/bands'
+      url: 'https://git.heroku.com/bandlistapi/bands'
     }).done(function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
@@ -113,7 +113,7 @@ function loadNewBand() {
     var bandName = $('#band_name').val()
     var genre = $('#genre').val()
     $.ajax({
-      url: 'https://git.heroku.com/bandlistapi.git/bands',
+      url: 'https://git.heroku.com/bandlistapi/bands',
       method: 'POST',
       data: $('#new_band_form').serialize()
     }).done(function(newBand) {
