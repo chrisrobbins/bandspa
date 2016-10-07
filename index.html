@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Band API</title>
+  <script src="//cdn.auth0.com/js/lock/10.1.0/lock.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../css/style.css" media="screen" title="Battle of the Bands" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Orbitron|Roboto+Mono" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <div id="welcome">
+    <h2>Welcome to the app</h2>
+    <button type="button" class="btn btn-default" id="login-button">login</button>
+  </div>
+  <div id="app" style="display: none;">
+    <button type="button" class="btn btn-default" id="logout-button">Log Out</button>
+
+    <h1>Battle of the Bands</h1>
+    <form id="new_band_form" action="/" method="POST">
+      <input type="text" id="band_name" class="input_body place" name="name" placeholder="Enter Band Name">
+      <input type="text" id="genre" class="input_body place" name="genre" placeholder="Enter Genre">
+      <br>
+      <input type="checkbox" id="corruption" value="">  Corrupt?
+      <br>
+      <button type="submit" id="add_new_band" class="btn btn-default">Add Band</button>
+    </form>
+    <br>
+
+    <ul id='band_list'>
+
+
+    </ul>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+
+</html>
