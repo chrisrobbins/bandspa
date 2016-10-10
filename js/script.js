@@ -80,7 +80,7 @@ function deleteBand() {
     var link = $(this)
 
     $.ajax({
-      url:base_url + link.attr('href'),
+      url:link.attr('href'),
       method: 'DELETE'
     })
     .done(function () {
@@ -106,7 +106,7 @@ function loadBand(band) {
   var li = $('<li></li>');
   li.html(band.name + ' ');
    var a = $('<a>Delete</a>');      
-   a.attr('href',base_url + '/bands' + band._id);     a.addClass('deleteBand');    
+   a.attr('href',base_url + '/bands/' + band._id);     a.addClass('deleteBand');    
    li.append(a);    
    $('#band_list').prepend(li);
 };
