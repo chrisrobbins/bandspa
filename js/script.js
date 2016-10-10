@@ -1,3 +1,6 @@
+// var base_url = 'https://localhost:3000';
+var base_url = 'https://bandlistapi.herokuapp.com'
+
 $.ajaxSetup({
   beforeSend: function (req) {
     req.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('id_token'))
@@ -89,7 +92,7 @@ function deleteBand() {
 
 function loadBands() {
   $.ajax({
-      url: 'https://localhost/3000/bands'
+      url: base_url + '/bands'
     }).done(function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
@@ -103,7 +106,7 @@ function loadBand(band) {
   var li = $('<li></li>');
   li.html(band.name + ' ');
    var a = $('<a>Delete</a>');      
-   a.attr('href','https://localhost/3000/bands' + band._id);     a.addClass('deleteBand');    
+   a.attr('href',base_url + '/bands' + band._id);     a.addClass('deleteBand');    
    li.append(a);    
    $('#band_list').prepend(li);
 };
@@ -113,7 +116,7 @@ function loadNewBand() {
     var bandName = $('#band_name').val()
     var genre = $('#genre').val()
     $.ajax({
-      url: 'https://localhost/3000/bands',
+      url:base_url + '/bands',
       method: 'POST',
       data: $('#new_band_form').serialize()
     }).done(function(newBand) {
