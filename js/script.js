@@ -80,7 +80,7 @@ function deleteBand() {
     var link = $(this)
 
     $.ajax({
-      url: link.attr('href'),
+      url:base_url + link.attr('href'),
       method: 'DELETE'
     })
     .done(function () {
