@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-image: url("/images/better-woodbackground.jpg");
+  background-color: #333;
   color: #f1f2f1;
   font-family: 'Roboto Mono', monospace;
 
@@ -40,9 +40,6 @@ a:hover {
   font-size: 26px;
   padding: 15px 25px;
   background: transparent;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  margin-left: 8px;
   color: lightblue;
   border-color: #f1f2f1;
   font-family: 'Roboto Mono', monospace;
@@ -100,8 +97,12 @@ a:hover {
   font-size: 38px;
 }
 #corruption {
+  margin: 0 auto;
   font-size: 16px;
   color: lightgreen;
   padding: 20px;
-
+}
+input#band_name, input#genre {
+  margin: 0 auto;
+  margin: 125px 50px;
 }
